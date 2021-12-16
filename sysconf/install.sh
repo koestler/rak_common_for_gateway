@@ -33,12 +33,6 @@ if [ ! -n "$linenum" ]; then
         sed -i "${line_array[${#line_array[*]} - 1]}i/usr/local/rak/bin/rak_script" /etc/rc.local
 fi
 
-# set ntp & UTC
-apt update
-apt install -y ntp
-timedatectl set-timezone UTC
-timedatectl set-ntp true
-
 cp config.txt /boot/config.txt
 cp motd /etc/motd -f
 
